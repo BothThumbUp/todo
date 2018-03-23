@@ -1,0 +1,18 @@
+.container
+  - if @tasks.empty?
+    %span.text-warning You give me no tasks. My existence is flatulent.
+  - else
+    %table.table.table-hover.table-bordered
+      %thead
+        %tr
+          %th Title
+          %th Created at
+          %th Completed
+      %tbody
+        - @tasks.each do |task|
+          %tr
+            %td
+              %strong= task.title
+            %td.text-info= task.created_at
+            %td.text-success= task.completed
+#modal.modal.fade
